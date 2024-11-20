@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace CSharpEgitimKampi301.EFProject
 {
-    public partial class UserControl1 : UserControl
+    public partial class FrmLocation : Form
     {
-        public UserControl1()
+        public FrmLocation()
         {
             InitializeComponent();
+        }
+        EgitimKampiEfTradelDbEntities db = new EgitimKampiEfTradelDbEntities();
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            var values = db.Location.ToList();
+            dataGridView1.DataSource = values;
         }
     }
 }
